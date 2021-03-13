@@ -2,7 +2,7 @@ package com.linkedlist;
 
 public class Node<K> {
     private K key;
-    private Node next;
+    private Node<K> next;
 
     public Node(K key) {
         this.key = key;
@@ -18,11 +18,11 @@ public class Node<K> {
         this.key = key;
     }
 
-    public Node getNext() {
+    public Node<K> getNext() {
         return next;
     }
 
-    public void setNext(Node next) {
+    public void setNext(Node<K> next) {
         this.next = next;
     }
 }
