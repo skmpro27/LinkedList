@@ -39,7 +39,7 @@ public class LinkedList<K> {
     }
 
     public Node<K> pop() {
-        Node tempNode = this.head;
+        Node<K> tempNode = this.head;
         this.head = head.getNext();
         return tempNode;
     }
@@ -53,16 +53,22 @@ public class LinkedList<K> {
         tempNode.setNext(null);
     }
 
-    public int search(K key) {
+    public Node<K> search(K key) {
         Node<K> tempNode = this.head;
-        int position = 1;
         while (tempNode != null ) {
             if (tempNode.getKey().equals(key))
-                return position;
-            position++;
+                return tempNode;
             tempNode = tempNode.getNext();
         }
-        return 0;
+        return null;
+    }
+
+    public void insertAfterNode(Node<K> insertNode, K key) {
+        Node<K> node = search(key);
+        if(node != null) {
+            insert(node, insertNode);
+        } else
+            System.out.println("No such node found");
     }
 
     public void printNode() {
