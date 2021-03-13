@@ -38,6 +38,12 @@ public class LinkedList {
         newNode.setNext(tempNode);
     }
 
+    public Node pop() {
+        Node tempNode = this.head;
+        this.head = head.getNext();
+        return tempNode;
+    }
+
     public void printNode() {
         Node tempNode = head;
         while (tempNode != null) {
@@ -47,4 +53,5 @@ public class LinkedList {
         }
         System.out.println();
     }
+
 }
