@@ -82,6 +82,16 @@ public class LinkedList<K> {
         node.setNext(null);
     }
 
+    public void size() {
+        Node<K> tempNode = head;
+        int count = 0;
+        while (tempNode != null) {
+            count++;
+            tempNode = tempNode.getNext();
+        }
+        System.out.println(count);
+    }
+
     public void printNode() {
         Node<K> tempNode = head;
         while (tempNode != null) {

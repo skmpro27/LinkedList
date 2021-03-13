@@ -162,6 +162,7 @@ public class LinkedListTest {
         linkedList.printNode();
         linkedList.searchDelete(40);
         linkedList.printNode();
+        linkedList.size();
         //to check is it inserted in between second and third node
         boolean result = secondNode.getNext().equals(fourthNode);
         Assert.assertTrue(result);
