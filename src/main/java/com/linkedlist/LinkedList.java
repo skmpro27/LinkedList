@@ -1,28 +1,28 @@
 package com.linkedlist;
 
-public class LinkedList {
-    public Node head;
-    public Node tail;
+public class LinkedList<K> {
+    public Node<K> head;
+    public Node<K> tail;
 
     public LinkedList() {
         this.head = null;
         this.tail = null;
     }
 
-    public void add(Node newNode) {
+    public void add(Node<K> newNode) {
         if (head == null)
             head = newNode;
 
         if (tail == null)
             tail = newNode;
         else {
-            Node tempNode = this.head;
+            Node<K> tempNode = this.head;
             this.head = newNode;
             this.head.setNext(tempNode);
         }
     }
 
-    public void append(Node newNode) {
+    public void append(Node<K> newNode) {
         if (tail == null) {
             head = newNode;
             tail = newNode;
@@ -32,20 +32,20 @@ public class LinkedList {
         }
     }
 
-    public void insert(Node node, Node newNode) {
-        Node tempNode = node.getNext();
+    public void insert(Node<K> node, Node<K> newNode) {
+        Node<K> tempNode = node.getNext();
         node.setNext(newNode);
         newNode.setNext(tempNode);
     }
 
-    public Node pop() {
+    public Node<K> pop() {
         Node tempNode = this.head;
         this.head = head.getNext();
         return tempNode;
     }
 
     public void popLast() {
-        Node tempNode = this.head;
+        Node<K> tempNode = this.head;
         while (!tempNode.getNext().equals(this.tail)) {
             tempNode = tempNode.getNext();
         }
@@ -53,8 +53,20 @@ public class LinkedList {
         tempNode.setNext(null);
     }
 
+    public int search(K key) {
+        Node<K> tempNode = this.head;
+        int position = 1;
+        while (tempNode != null ) {
+            if (tempNode.getKey().equals(key))
+                return position;
+            position++;
+            tempNode = tempNode.getNext();
+        }
+        return 0;
+    }
+
     public void printNode() {
-        Node tempNode = head;
+        Node<K> tempNode = head;
         while (tempNode != null) {
             System.out.print(tempNode.getKey());
             System.out.print((tempNode.getNext() == null) ? "" : " -> " );

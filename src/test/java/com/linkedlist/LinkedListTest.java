@@ -24,7 +24,7 @@ public class LinkedListTest {
         Node<Integer> secondNode = new Node<>(30);
         Node<Integer> thirdNode = new Node<>(56);
         //to connect the node link in a list
-        LinkedList linkedList = new LinkedList();
+        LinkedList<Integer> linkedList = new LinkedList<>();
         linkedList.add(firstNode);
         linkedList.add(secondNode);
         linkedList.add(thirdNode);
@@ -42,7 +42,7 @@ public class LinkedListTest {
         Node<Integer> secondNode = new Node<>(30);
         Node<Integer> thirdNode = new Node<>(70);
         //to connect the node link in a list
-        LinkedList linkedList = new LinkedList();
+        LinkedList<Integer> linkedList = new LinkedList<>();
         linkedList.append(firstNode);
         linkedList.append(secondNode);
         linkedList.append(thirdNode);
@@ -60,7 +60,7 @@ public class LinkedListTest {
         Node<Integer> secondNode = new Node<>(30);
         Node<Integer> thirdNode = new Node<>(70);
         //to connect the node link in a list
-        LinkedList linkedList = new LinkedList();
+        LinkedList<Integer> linkedList = new LinkedList<>();
         linkedList.append(firstNode);
         linkedList.append(thirdNode);
         linkedList.printNode();
@@ -79,7 +79,7 @@ public class LinkedListTest {
         Node<Integer> secondNode = new Node<>(30);
         Node<Integer> thirdNode = new Node<>(70);
         //to connect the node link in a list
-        LinkedList linkedList = new LinkedList();
+        LinkedList<Integer> linkedList = new LinkedList<>();
         linkedList.append(firstNode);
         linkedList.append(secondNode);
         linkedList.append(thirdNode);
@@ -98,7 +98,7 @@ public class LinkedListTest {
         Node<Integer> secondNode = new Node<>(30);
         Node<Integer> thirdNode = new Node<>(70);
         //to connect the node link in a list
-        LinkedList linkedList = new LinkedList();
+        LinkedList<Integer> linkedList = new LinkedList<>();
         linkedList.append(firstNode);
         linkedList.append(secondNode);
         linkedList.append(thirdNode);
@@ -109,5 +109,21 @@ public class LinkedListTest {
         boolean result = linkedList.head.equals(firstNode) &&
                          linkedList.tail.equals(secondNode);
         Assert.assertTrue(result);
+    }
+
+    @Test
+    public void searchByValueInLinkedListTest() {
+        Node<Integer> firstNode = new Node<>(56);
+        Node<Integer> secondNode = new Node<>(30);
+        Node<Integer> thirdNode = new Node<>(70);
+        //to connect the node link in a list
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.append(firstNode);
+        linkedList.append(secondNode);
+        linkedList.append(thirdNode);
+        linkedList.printNode();
+        //check for the proper implementation of the same
+        int result = linkedList.search(30);
+        Assert.assertEquals(2, result);
     }
 }
