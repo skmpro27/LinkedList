@@ -146,4 +146,24 @@ public class LinkedListTest {
                          insertNode.getNext().equals(thirdNode);
         Assert.assertTrue(result);
     }
+
+    @Test
+    public void givenNumberDeleteFromLinkedListTest() {
+        Node<Integer> firstNode = new Node<>(56);
+        Node<Integer> secondNode = new Node<>(30);
+        Node<Integer> thirdNode = new Node<>(40);
+        Node<Integer> fourthNode = new Node<>(70);
+        //to connect the node link in a list
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.append(firstNode);
+        linkedList.append(secondNode);
+        linkedList.append(thirdNode);
+        linkedList.append(fourthNode);
+        linkedList.printNode();
+        linkedList.searchDelete(40);
+        linkedList.printNode();
+        //to check is it inserted in between second and third node
+        boolean result = secondNode.getNext().equals(fourthNode);
+        Assert.assertTrue(result);
+    }
 }

@@ -71,6 +71,17 @@ public class LinkedList<K> {
             System.out.println("No such node found");
     }
 
+
+    public void searchDelete(K key) {
+        Node<K> node = search(key);
+        Node<K> tempNode = this.head;
+        while (!tempNode.getNext().equals(node)) {
+            tempNode = tempNode.getNext();
+        }
+        tempNode.setNext(node.getNext());
+        node.setNext(null);
+    }
+
     public void printNode() {
         Node<K> tempNode = head;
         while (tempNode != null) {
