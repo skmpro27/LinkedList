@@ -44,6 +44,15 @@ public class LinkedList {
         return tempNode;
     }
 
+    public void popLast() {
+        Node tempNode = this.head;
+        while (!tempNode.getNext().equals(this.tail)) {
+            tempNode = tempNode.getNext();
+        }
+        this.tail = tempNode;
+        tempNode.setNext(null);
+    }
+
     public void printNode() {
         Node tempNode = head;
         while (tempNode != null) {
@@ -53,5 +62,4 @@ public class LinkedList {
         }
         System.out.println();
     }
-
 }

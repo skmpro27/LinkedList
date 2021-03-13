@@ -74,7 +74,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void givenNumberDeleteFirstNodeInLinkedListTest() {
+    public void deleteFirstNodeInLinkedListTest() {
         Node<Integer> firstNode = new Node<>(56);
         Node<Integer> secondNode = new Node<>(30);
         Node<Integer> thirdNode = new Node<>(70);
@@ -89,6 +89,25 @@ public class LinkedListTest {
         //check for the proper implementation of the same
         boolean result = linkedList.head.equals(secondNode) &&
                          linkedList.tail.equals(thirdNode);
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void deleteLastNodeInLinkedListTest() {
+        Node<Integer> firstNode = new Node<>(56);
+        Node<Integer> secondNode = new Node<>(30);
+        Node<Integer> thirdNode = new Node<>(70);
+        //to connect the node link in a list
+        LinkedList linkedList = new LinkedList();
+        linkedList.append(firstNode);
+        linkedList.append(secondNode);
+        linkedList.append(thirdNode);
+        linkedList.printNode();
+        linkedList.popLast();
+        linkedList.printNode();
+        //check for the proper implementation of the same
+        boolean result = linkedList.head.equals(firstNode) &&
+                         linkedList.tail.equals(secondNode);
         Assert.assertTrue(result);
     }
 }
